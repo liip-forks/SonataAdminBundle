@@ -11,6 +11,8 @@ file that was distributed with this source code.
 
 {% extends base_template %}
 
+{% form_theme form "SonataAdminBundle::Form/form_admin_fields.html.twig" %}
+
 {% block title %}
     {% if admin.id(object) %}
         {{ "title_edit"|trans({'%name%': admin.toString(object) }, 'SonataAdminBundle') }}
