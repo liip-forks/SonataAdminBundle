@@ -25,18 +25,18 @@ file that was distributed with this source code.
                     {{- label -}}
                 {% else %}
                     {{- label|trans({}, sonata_admin.admin.translationDomain) -}}
-                {% endif%}
-                {{ required ? '*' : '' }}
+                {% endif %}
+                {{- required ? '&#160;*' : '' -}}
             </span>
         </label>
     {% else %}
         <label{% for attrname,attrvalue in attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>
             {% if not sonata_admin.admin%}
-                {{ label }}
+                {{- label -}}
             {% else %}
-                {{ label|trans({}, sonata_admin.admin.translationDomain) }}
-            {% endif%}
-            {{ required ? '*' : '' }}
+                {{- label|trans({}, sonata_admin.admin.translationDomain) -}}
+            {% endif %}
+            {{- required ? '&#160*' : '' -}}
         </label>
     {% endif %}
 {% endspaceless %}
