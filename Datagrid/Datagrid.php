@@ -108,6 +108,7 @@ class Datagrid implements DatagridInterface
 
         $this->query->setSortBy(isset($this->values['_sort_by']) ? $this->values['_sort_by'] : null);
         $this->query->setSortOrder(isset($this->values['_sort_order']) ? $this->values['_sort_order'] : null);
+        $this->query->setMaxResults( 50 );
 
         $this->pager->setPage(isset($this->values['_page']) ? $this->values['_page'] : 1);
         $this->pager->setQuery($this->query);
